@@ -19,9 +19,9 @@ class SandwichTest {
     Sandwich sandwich = new Sandwich();
 
     sandwich.addIngredient(Ingredient.CHEESE);
-    sandwich.addIngredient(Ingredient.SALAT);
+    sandwich.addIngredient(Ingredient.SALAD);
 
-    double expectedPrice = Ingredient.CHEESE.getPrice() + Ingredient.SALAT.getPrice();
+    double expectedPrice = Ingredient.CHEESE.getPrice() + Ingredient.SALAD.getPrice();
 
     assertEquals(expectedPrice, sandwich.getPrice());
   }

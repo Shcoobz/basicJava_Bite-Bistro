@@ -5,34 +5,92 @@ import org.shcoobz.model.Drink;
 import org.shcoobz.enums.Ingredient;
 import org.shcoobz.model.Sandwich;
 import org.shcoobz.service.Restaurant;
+import org.shcoobz.ui.UserInterface;
 
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * The main class of the restaurant application.
+ * This class is responsible for creating a restaurant instance, preparing orders of drinks and sandwiches,
+ * and managing the overall flow of the application.
+ */
 public class Main {
   public static void main(String[] args) {
-    Restaurant subway = new Restaurant("Subway");
+    Restaurant bistroBites = new Restaurant("Bite Bistro");
 
-    Drink coke = new Drink(DrinkFlavour.COCA_COLA);
-    Drink fanta = new Drink(DrinkFlavour.FANTA);
-    Drink iceTea = new Drink(DrinkFlavour.ICE_TEA);
+    List<Drink> drinks = createDrinks();
+    List<Sandwich> sandwiches = createSandwiches();
 
+    orderDrinks(bistroBites, drinks);
+    orderSandwiches(bistroBites, sandwiches);
+
+    printOrderDetails(bistroBites);
+  }
+
+  /**
+   * Creates a list of drinks with various flavors.
+   *
+   * @return A list of Drink instances.
+   */
+  private static List<Drink> createDrinks() {
+    return Arrays.asList(
+        new Drink(DrinkFlavour.COCA_COLA),
+        new Drink(DrinkFlavour.FANTA),
+        new Drink(DrinkFlavour.ICE_TEA)
+    );
+  }
+
+  /**
+   * Creates a list of sandwiches with different ingredients.
+   *
+   * @return A list of Sandwich instances.
+   */
+  private static List<Sandwich> createSandwiches() {
     Sandwich sandwich = new Sandwich();
     sandwich.addIngredient(Ingredient.CHEESE);
-    sandwich.addIngredient(Ingredient.SALAT);
+    sandwich.addIngredient(Ingredient.SALAD);
 
     Sandwich sandwichSpecial = new Sandwich("Special Sandwich");
     sandwichSpecial.addIngredient(Ingredient.CHEESE);
-    sandwichSpecial.addIngredient(Ingredient.SALAT);
+    sandwichSpecial.addIngredient(Ingredient.SALAD);
     sandwichSpecial.addIngredient(Ingredient.SPECIAL);
 
-    subway.addOrder(coke);
-    subway.addOrder(fanta);
-    subway.addOrder(iceTea);
+    return Arrays.asList(sandwich, sandwichSpecial);
+  }
 
-    subway.addOrder(sandwich);
-    subway.addOrder(sandwichSpecial);
+  /**
+   * Places orders for a list of drinks at the given restaurant.
+   *
+   * @param restaurant The restaurant to which the drink orders are to be added.
+   * @param drinks The list of drinks to be ordered.
+   */
+  private static void orderDrinks(final Restaurant restaurant, List<Drink> drinks) {
+    for (Drink drink : drinks) {
+      restaurant.addOrder(drink);
+    }
+  }
 
-    System.out.println("\nWelcome to " + subway.getName() + " !");
-    System.out.println("\nYour order:");
-    subway.printOrders();
-    System.out.println("\nTotal: " + String.format("%,.2f", subway.calculateIncome()) + " bananas");
+  /**
+   * Places orders for a list of sandwiches at the given restaurant.
+   *
+   * @param restaurant The restaurant to which the sandwich orders are to be added.
+   * @param sandwiches The list of sandwiches to be ordered.
+   */
+  private static void orderSandwiches(final Restaurant restaurant, List<Sandwich> sandwiches) {
+    for (Sandwich sandwich : sandwiches) {
+      restaurant.addOrder(sandwich);
+    }
+  }
+
+  /**
+   * Prints the details of orders placed at the restaurant.
+   *
+   * @param restaurant The restaurant from which the order details are to be printed.
+   */
+  private static void printOrderDetails(final Restaurant restaurant) {
+    UserInterface.printLogo();
+    UserInterface.printWelcome(restaurant);
+    UserInterface.printOrderDetails(restaurant);
   }
 }
