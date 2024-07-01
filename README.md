@@ -1,4 +1,4 @@
-# Bistro Bites
+# Bite Bistro
 
 ![Bite Bistro Image](src/main/resources/img/bite-bistro.png)
 
