@@ -1,10 +1,10 @@
 # basicJava_Bite-Bistro: [LIVE DEMO](https://replit.com/@shcoobz/basicJava-bite-bistro)
 
-![Bite Bistro Image](src/main/resources/img/bite-bistro.png)
+![basicJava_Bite-Bistro](src/main/resources/img/bite-bistro.png)
 
 ## Summary
 
-Welcome to Bite Bistro! This application provides a simulated environment for managing a restaurant. It features a user-friendly interface for order handling, including drinks and sandwiches, and showcases a simple yet effective system for calculating total sales and displaying order details.
+basicJava_Bite-Bistro provides a simulated environment for managing a restaurant. It features a user-friendly interface for order handling, including drinks and sandwiches, and showcases a simple yet effective system for calculating total sales and displaying order details.
 
 The core functionality includes:
 
@@ -37,4 +37,4 @@ Users can add or remove items from the menu, offering flexibility in what the re
 
 ---
 
-_Note: This document provides an overview of Bite Bistro. For detailed instructions and more information, please refer to the source code documentation._
+_Note: This document provides an overview of basicJava_Bite-Bistro. For detailed instructions and more information, please refer to the source code documentation._
