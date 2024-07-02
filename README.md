@@ -1,4 +1,4 @@
-# basicJava_Bite-Bistro: [LIVE DEMO](https://replit.com/@shcoobz/basicJava-bite-bistro)
+# basicJava_Bite Bistro: [LIVE DEMO](https://replit.com/@shcoobz/basicJava-bite-bistro)
 
 ![basicJava_Bite-Bistro](src/main/resources/img/bite-bistro.png)
 
